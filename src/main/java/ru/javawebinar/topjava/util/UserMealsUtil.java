@@ -32,7 +32,7 @@ public class UserMealsUtil {
         Map<LocalDate, Integer> day2calories = new HashMap<>();
         for (UserMeal meal : meals) {
             LocalDate localDate = meal.getDateTime().toLocalDate();
-            int calories = day2calories.computeIfAbsent(localDate, k -> 0);
+            Integer calories = day2calories.getOrDefault(localDate, 0);
             calories += meal.getCalories();
             day2calories.put(localDate, calories);
         }
