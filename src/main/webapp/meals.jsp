@@ -9,7 +9,7 @@
 <h3><a href="index.html">Home</a></h3>
 <hr>
 <h2>Meals</h2>
-<h3><a href="index.html">Add Meal</a></h3>
+<h3><a href="meals?action=edit">Add Meal</a></h3>
 <table border="1">
     <tbody>
     <tr>
@@ -24,8 +24,8 @@
             <td>${meal.dateTime.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm"))}</td>
             <td>${meal.description}</td>
             <td>${meal.calories}</td>
-            <td>${meal.calories}</td>
-            <td>${meal.description}</td>
+            <td><a href="meals?action=edit&mealId=<c:out value="${meal.id}"/>">Update</a></td>
+            <td><a href="meals?action=delete&mealId=<c:out value="${meal.id}"/>">Delete</a></td>
         </tr>
     </c:forEach>
     </tbody>

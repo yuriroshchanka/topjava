@@ -54,7 +54,7 @@ public class MealsUtil {
         return new MealTo(meal.getDateTime(), meal.getDescription(), meal.getCalories(), excess);
     }
 
-    public static List<MealTo> getMealsToList() {
+    static List<MealTo> getMealsToList() {
         List<Meal> mealsList = getMealsList();
         Map<LocalDate, Integer> date2Calories = getDate2Calories(mealsList);
         return mealsList.stream().map(m -> createTo(m, CALORIES < date2Calories.get(m.getDate())))
